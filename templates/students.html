@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Students List</title>
+</head>
+
+<body>
+    <div>
+        {% for student in students %}
+        {% if student.6 %}
+        <img src="{{ url_for('static', filename=student.6) }}" width="100">
+        {% endif %}
+        <span>{{ student.0 }} {{ student.1 }}</span>
+        <span><a href="student_upd?id={{student.0}}">Edit</a></span>
+        <span><a href="student_del?id={{student.0}}">Delete</a></span><br>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="/student_add">Add another</a><br />
+    </div>
+</body>
+
+</html>
